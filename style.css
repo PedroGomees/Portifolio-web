@@ -73,7 +73,7 @@ li a:hover::after {
     width: 100%;
     text-align: center;
    margin-bottom: 15px;
-height: 55%;  }
+height: 60%;  }
 
 #about{
    height: 100%; 
@@ -316,9 +316,7 @@ scrollbar-thumb:hover {
   
   
 }
-.img3D:hover{
-  
-}
+
 
 /* criação de uma animação de circunferencia */
 .circleContainer{
@@ -534,4 +532,96 @@ filter: blur(5px);
 @keyframes a5{
   from{transform: scaleY(0);}
   to{transform: scaleY(19);}
+}
+
+.resumeBox{
+  
+  text-align: center;
+  color: #c4b998;
+  font-weight: 500;
+  font-size: 0.7em;
+  margin-top: 15px;
+  border-bottom: solid 1px #c09a62 ;
+  padding-bottom: 20px;
+  
+}
+.resumeBox img{
+  margin-top: 15px;
+}
+.resumeBox a{
+  text-align: center;
+  color: inherit;
+ 
+}
+#right{
+  overflow: scroll;
+}
+
+/* formatando o rodapé*/
+#Contatos{
+  width: 100%;
+  height: 150px;
+  margin-top: 200px;
+  border: white solid 3px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  
+}
+#Contatos div{
+ 
+  
+}
+
+@media (max-width:480px){
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;}
+
+    #nav-links {
+      flex-direction: column;
+      margin-top: 10px;
+  }
+  #nav-links li {
+    margin-right: 0;
+    margin-bottom: 10px;
+}
+
+ 
+#about{
+   height: 100%; 
+    width: 100%;
+  
+    font-family: "BeaufortforLOL-Bold";
+    margin-bottom: 200px; 
+}
+#about h1, h2{
+  margin-left: 10px;
+}
+#about p{
+  text-align: justify;
+  margin-left: 25%;
+  font-weight: 100;
+  font-family:sans-serif "BeaufortforLOL-Bold";
+  margin-top: 5%;
+width: 65%;
+  }
+  
+}
+/* extra small */
+
+@media (min-width:481px) and (max-width:767px){}
+
+/*small tablets*/
+@media (min-width:768px) and (max-width:990px){}
+
+/*large tablets laptop*/
+@media (min-width:991px) and (max-width:1199px){}
+
+/*desktop*/
+@media (min-width:1200px) and (max-width:1919px){}
+
+/* large*/
+@media (min-width:1920px){
+
 }
