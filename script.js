@@ -20,3 +20,9 @@ function reveal(){
     }
 };
 
+let visao = document.getElementById('visao');
+let visaoText = document.getElementById('visaoText');
+visao.addEventListener('click', function(){
+visaoText.classList.toggle('hidden');
+visaoText.classList.toggle('Desvanhecer');
+})
