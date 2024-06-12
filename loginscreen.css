@@ -1,0 +1,55 @@
+.login-screen{
+  margin: 0 auto;
+  margin-top: 250px;
+  display:flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-rectangle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FDDE82;
+
+}
+
+.custom-rectangle::after{
+  content: '';
+  background:linear-gradient(180deg, rgba(1, 10, 19, 0) 25%, rgba(1, 10, 19, 0.9));
+   background-color: #0a0a0c;
+  z-index: 1;
+  width: 295px;
+  position: absolute;
+  height: 180px;
+  clip-path: polygon(0 20%, 100% -100%, 100% 100%, 0% 100%);
+ top: -70px;
+
+}
+
+.custom-rectangle .side {
+  position: absolute;
+  background-color: inherit;
+}
+
+.custom-rectangle .top{
+  clip-path: polygon(0 20%, 100% -100%, 100% 100%, 0% 100%);
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  box-shadow: inset 117px 1px 53px rgba(0, 0, 0, 0.5);
+
+}
+
+
+.custom-rectangle .left {
+  clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 100%);
+  /*transform: skew(-10deg);*/
+}
+
+.custom-rectangle .right {
+  clip-path: polygon(66% 20%, 100% 30%, 100% 100%, 66% 100%);
+ /* transform: skew(-10deg);*/
+}
