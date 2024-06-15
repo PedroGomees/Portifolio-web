@@ -26,3 +26,10 @@ visao.addEventListener('click', function(){
 visaoText.classList.toggle('hidden');
 visaoText.classList.toggle('Desvanhecer');
 })
+
+/*
+const file = document.getElementById('file');
+
+file.addEventListener('mouseup', startAction(){
+
+})*/

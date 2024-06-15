@@ -74,8 +74,9 @@ border-radius: 6px;
 .scanner{
   position: relative;
   border-radius: 12px;
-  border: 6px solid #fff;
-  padding:50px 20px 10px 20px;
+ border: 3px solid #ffcfa3;
+  padding:10px 20px 10px 20px;
+height: 200px;
 margin-top: 90px;
 
 }
@@ -85,6 +86,8 @@ margin-top: 90px;
   z-index: 1;
   position: absolute;
   background-color:  rgb(1, 10, 19);
+ 
+ 
 }
 
 .scanner::before{
@@ -93,6 +96,7 @@ margin-top: 90px;
   top: 50%;
   left: -10px;
   transform: translateY(-50%);
+  
 }
 
 .scanner::after{
@@ -101,6 +105,8 @@ margin-top: 90px;
   top: -10px;
   left: 50%;
   transform: translateX(-50%);
+  /*box-shadow: 0px 4px 9px #fad975;
+  border-radius: 12px;*/
 }
 
 .scanner *{
@@ -108,8 +114,8 @@ margin-top: 90px;
 }
 
 .fingerprint{
-  width: 80px;
-height:80px;
+  width: 100px;
+height:100px;
   position: relative;
   background-size: 100%;
   background-image: url(/images/fingerprint.png);
@@ -128,8 +134,9 @@ height:80px;
 
 .fingerprint::before{
   background-image: url(/images/fingerprint2.png);
-  width: 80px;
-  animation: anm-fingerprint 4s ease-in-out infinite
+  width: 100px;
+  animation: anm-fingerprint 4s ease-in-out infinite;
+  box-shadow: 0px 4px 9px #fad975;
 }
 .fingerprint::after{
   height: 2px;
@@ -146,7 +153,7 @@ height:80px;
   position: relative;
   padding-top:30px ;
   color: #FDDE82;
-  font-size:0.6em;
+  font-size:0.8em;
   letter-spacing: 5px;
   filter: drop-shadow(0 0 45px #fddb74);
   
