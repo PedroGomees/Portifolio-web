@@ -47,16 +47,7 @@ Este portfólio foi construído com foco em performance, responsividade e clarez
 - Foco em performance e UX
 
 ---
-
-## 📫 Contato
-
-Você pode entrar em contato comigo por:
-
-- **Email:** pedro@seudominio.com *(ou seu real e-mail)*
-- **LinkedIn:** [linkedin.com/in/seuperfil](https://linkedin.com/in/seuperfil)
-- **GitHub:** [github.com/seuusuario](https://github.com/seuusuario)
-
----
+=
 
 ## 📝 Licença
 
@@ -64,9 +55,5 @@ Este projeto é de uso pessoal, mas o código está aberto para fins educacionai
 
 ---
 
-## ✨ Observação
-
-Este portfólio está em constante evolução. Novos projetos, melhorias de layout e funcionalidades estão sempre sendo adicionados conforme minha jornada profissional avança.
-
----
+==
 
