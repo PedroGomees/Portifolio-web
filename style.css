@@ -1,4 +1,17 @@
 @import url(//db.onlinewebfonts.com/c/12420e8c141ca7c3dff41de2d59df13e?family=BeaufortforLOL-Bold);
+@font-face {
+  font-family: 'Beaufort';
+  src: url('./fonts/Beaufort-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Beaufort-bold';
+  src: url('./fonts/Beaufort-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 *{
     padding: 0; box-sizing: border-box; margin: 0;
 }
@@ -7,17 +20,11 @@ body{
 
    background:linear-gradient(180deg, rgba(1, 10, 19, 0) 25%, rgba(1, 10, 19, 0.9));
    background-color: #0a0a0c;
-   
-      width: 100%;
+
       height: 210vh;
     }
 
-.p1{
-    padding: 10px 0;
-    position: relative;
-    
-    color:#f0e6d2;
-}
+
 header{
     width: 100%;
     height: 200px;
@@ -63,64 +70,94 @@ li a:hover::after {
     transform: scaleY(0.5); /* Reduz a altura do sublinhado */
   }
 
+.text-f1{
+    padding: 10px 0;
+    font-size: 1em;
+    color:#f0e6d2;
+}
 
-  
-  #Inicial{
-    margin-top: 500px;
-    height: 70vh;
+  /* Section da biografia*/
+.biografia{
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    margin-top: 200px;
+    height: 80vh;
+   
   }
-  #Icon{
-    width: 100%;
-    text-align: center;
-   margin-bottom: 15px;
-height: 60%;  }
-
-#about{
-   height: 100%; 
-    width: 100%;
+.logo{
+  text-align: center;
+ }
+/* texto da biografia*/
+.abt-me{
+ 
     font-family: "BeaufortforLOL-Bold";
-    margin-bottom: 200px;
+    text-align: center;
+    max-width: 500px;
+  
     
 }
-#about p:hover{
-  transition: all 0.9s cubic-bezier(0.075, 0.82, 0.165, 1);
-  transform: scale(1.1);
-}
-#about h2{
+
+.abt-me h2{
     color: #c8aa6e;
-    font-size: 0.6em;
+    font-size: 1.5em;
 }
-#about h1{
-    font-size: 2em;
+.abt-me h1{
+    font-size: 2rem;
     padding: 5px;
     margin-bottom: 6px;
     
     color: #f0e6d2;
 }
-#about h1,h2{
-    text-align: center;
+.abt-met h1,h2{
     font-weight: 700;
     text-transform: uppercase;
 }
-#about p{
+.abt-me p{
 text-align: justify;
-width: 30%;
-margin-left: 25%;
-font-weight: 100;
-font-family:sans-serif "BeaufortforLOL-Bold";
+     font-family: 'Beaufort-bold', serif;
 margin-top: 5%;
 }
 
-
-
-  .section2{
+/* barra de carregamento*/
+#scroll-progress-bar {
+  position: fixed;
+  top: 200px;
+  left: 20px;
+  width: 0%; /* largura da barrinha */
+  height: 2px;
+  background-color: #eed077; /* azul — mude à vontade */
+  z-index: 2;
+  transition: height 0.1s ease-out;
+}
+#scroll-progress-bar::after{
+  content: "";
+  width:150px;
+   position: fixed;
+  top: 200px;
+  left: 20px;
+    z-index: -1;
+    height: 2px;
+  background-color: #55555562;
+}
+/* formatação da segunda section*/
+  .section-2{
     position: relative;
+      width: 80%;
+    height:60vh ;
+    margin: auto;
+  
+ margin-top:200px;
+ transition: all 1.2s ease-in;
+ background-color: transparent;
+ 
     transform: translateY(150px);
     opacity:0;
     transition: all es ease;
   }
 
-  .section2.active{
+.section-2.active{
     transform: translateY(0px);
     opacity: 1;
   }
@@ -146,19 +183,9 @@ margin-top: 5%;
     letter-spacing: 10px;
     
   }
-  #Projetos{
-    width: 80%;
-    height:60vh ;
-    margin: auto;
-   
- margin-top:300px;
- transition: all 1.2s ease-in;
- background-color: transparent;
- 
-      
-  }
 
-  #Projetos:hover{
+
+.section-2:hover{
     box-shadow: #72727221 2px 20px  15px;
   }
 
