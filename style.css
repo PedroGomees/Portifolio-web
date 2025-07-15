@@ -116,7 +116,7 @@ li a:hover::after {
 }
 .abt-me p{
 text-align: justify;
-     font-family: 'Beaufort-bold', serif;
+font-family: 'Beaufort-bold', serif;  
 margin-top: 5%;
 }
 
@@ -233,8 +233,7 @@ margin-top: 5%;
   }
 
  #left:hover{
-    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    transform: scale(1.1);
+ 
     border: solid #c29671 2px;
   }
     /*formatação do compartimento do meio*/
@@ -256,8 +255,7 @@ margin-top: 5%;
 
   }
   #middle:hover{
-    transition:all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    transform: scale(1.1);
+ 
     border: solid #c29671 2px;
   }
   /*formatação da parte direita*/
@@ -270,8 +268,7 @@ margin-top: 5%;
     
   }
  #right:hover{
-    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    transform: scale(1.1);
+   
     border: solid #c29671 2px;
   }
 .ICON{
@@ -284,23 +281,23 @@ margin: 50px;
 
 ::-webkit-scrollbar {
  scrollbar-width: 5px;
-  width: 3px; /* Largura da barra de rolagem */
+  width: 3px; 
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent; /* Cor de fundo da área da barra de rolagem */
+  background: transparent; 
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c29671; /* Cor do preenchimento da barra de rolagem */
-  border-radius: 15px; /* Raio das bordas da barra de rolagem */
+  background: #c29671; 
+  border-radius: 15px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #e22c2c; /* Cor do preenchimento da barra de rolagem ao passar o mouse */
 }
 
-/* Estilização para navegadores Firefox */
+
 scrollbar {
   width: 6px; /* Largura da barra de rolagem */
 }
@@ -344,6 +341,98 @@ scrollbar-thumb:hover {
   
 }
 
+/* Sessão de projetos trabalhados*/
+.moreProjects{
+  margin-top: 200px;
+}
+.moreProjects h2{
+  font-size: 2em;
+}
+
+.project-carousel-container {
+    position: relative;
+    max-width: 800px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 50px;
+      font-family: 'Beaufort', serif;
+    overflow: hidden;
+    border: solid #c29671 2px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: inherit;
+}
+
+.project-carousel {
+    display: flex; 
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%; 
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    height: auto; 
+    border-radius: 4px;
+    margin-bottom: 15px;
+    max-height: 400px;
+    object-fit: contain; 
+}
+
+.carousel-slide h3 {
+    font-size: 1.5em;
+   color: #d8b46c;
+ 
+    margin-bottom: 10px;
+}
+
+.carousel-slide p {
+    font-size: 1em;
+    color: #ffff8d;
+    text-align: center;
+}
+
+
+/* Botões de Navegação */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color:#c8aa6e;/* Sua cor dark-gray semi-transparente */
+    color:#111318;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%; /* Botões redondos */
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 10; /* Garante que os botões fiquem acima das imagens */
+}
+
+.carousel-button:hover {
+    background-color: #454D4D; /* dark-gray sólido no hover */
+    color: white; /* Texto branco no hover */
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+/* Opcional: Esconder botões se houver apenas um slide */
+.carousel-button.hidden {
+    display: none;
+}
 
 /* criação de uma animação de circunferencia */
 .circleContainer{
