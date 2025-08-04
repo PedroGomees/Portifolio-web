@@ -239,7 +239,6 @@ margin-top: 5%;
     /*formatação do compartimento do meio*/
   #middle{
     grid-area: middle;
-    
     border: 1px outset #6e5743 ;
     border-bottom: 1px solid #6e5743 ;
     border-right: 1px solid #6e5743 ;
@@ -341,6 +340,96 @@ scrollbar-thumb:hover {
   
 }
 
+/*Formatação do Main do meio*/
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    
+}
+
+.project-card {
+    background-color: #181a1f;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 5%;
+    padding: 20px;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.08), 
+        0 0 0 1px var(--card-border-color), 
+        0 0 10px 1px var(--card-border-glow); 
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    text-decoration: none; 
+    color: var(--text-color);
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); 
+ box-shadow: 
+         /* Uma borda fina e clara no topo */
+        0 0 15px 5px #c09a62;
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.project-header .fas {
+
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.project-title {
+    margin: 0;
+    font-weight: 700;
+    color: #c09a62;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.project-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #f0e6d2;
+    margin-bottom: 15px;
+    flex-grow: 1; 
+}
+
+.project-tags {
+    display: flex;
+    justify-content: flex-end; /* Alinha as tags à direita */
+}
+
+.project-tags span {
+    background-color: #f7df1e; /* Cor da tag de Python (roxo escuro) */
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.project-tags span:last-child {
+    margin-right: 0;
+}
+
+/* Exemplo de tag para JavaScript, se precisar */
+.project-card:nth-child(4) .project-tags span,
+.project-card:nth-child(5) .project-tags span,
+.project-card:nth-child(6) .project-tags span {
+    background-color: #f7df1e; 
+    color: #333;
+}
+
 /* Sessão de projetos trabalhados*/
 .moreProjects{
   margin-top: 200px;
@@ -432,222 +521,6 @@ scrollbar-thumb:hover {
 /* Opcional: Esconder botões se houver apenas um slide */
 .carousel-button.hidden {
     display: none;
-}
-
-/* criação de uma animação de circunferencia */
-.circleContainer{
-  margin: auto;
-  position: relative;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
-.circle{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-image: radial-gradient(circle at -20.44% 56.16%, #ffff8d 0, #ffea82 16.67%, #eed077 33.33%, #d8b46c 50%, #c09a62 66.67%, #a98359 83.33%, #947051 100%);
-  animation-play-state: paused;
-  border-radius: 50%;
-}
-
-.circleAnimation{
-  animation: circleRotate 0.5s infinite linear;
-}
-.projectText{
-
-
-position: relative;
-}
-
-.circleContainer p{
-
- color: #c4b998;
- font-size: 1.5em;
- font-weight: 600;
- text-align: center;
- margin-top: 25px;
-
-}
-.circleContainer img{
- margin: auto;
- 
-}
-
-.circlecenter{
-  animation: none;
-  z-index: 2;
-  position: absolute;
-  
-right: 4px ;
-top:6px;
-  width: 96%;
-  height: 96%;
-  border-radius: 50%;
-  background-color: #111318;
-  
-}
-/* formatando o blur dos span, e criando animação do circulo*/
-.circle span{
-  border-radius: 50%;
-  width: 100%;
-  z-index: -3;
-  position: absolute;
-  height: 100%;
-  background-image: radial-gradient(circle at -20.44% 56.16%, #ffff8d 0, #ffea82 16.67%, #eed077 33.33%, #d8b46c 50%, #c09a62 66.67%, #a98359 83.33%, #947051 100%);
- }
-
- .circle span:nth-child(1){
-filter: blur(5px);
-}
-.circle span:nth-child(2){
-  filter: blur(15px);
-}
-.circle span:nth-child(3){
-  filter: blur(12px);
-}
-.circle span:nth-child(4){
-  filter: blur(15px);
-}
-
-@keyframes circleRotate{
-  0%{ transform: rotate(0deg);
-}
-  100%{transform:rotate(360deg)};
-}
-
-.musicContainer{
-  display: flex;
-  position: relative;
-  
-}
-.musicContainer span{
-  background-color: #c09a62;
-  width: 4px;
-  height: 5px;
-  margin-left: 10px;
-  position: absolute;
- 
-}
-
-.musicContainer span:nth-child(1){
-  top: 80px;
-  left: 30px;
-  animation:a1 0.5s linear infinite;
-}
-.musicContainer span:nth-child(2){
-  top: 80px;
-  left: 40px;
-  animation:a3 0.7s ease-in infinite;
-}
-.musicContainer span:nth-child(3){
-  top: 80px;
-  left: 50px;
-  animation:a2 0.5s linear infinite;
-}
-.musicContainer span:nth-child(4){
-  top: 80px;
-  left: 60px;
-  animation:a4 0.5s ease-in infinite;
-}
-.musicContainer span:nth-child(5){
-  top: 80px;
-  left: 70px;
-  animation:a2 0.5s linear infinite;
-}
-.musicContainer span:nth-child(6){
-  top: 80px;
-  left: 80px;
-  animation:a1 0.5s linear infinite;
-}
-.musicContainer span:nth-child(7){
-  top: 80px;
-  left: 90px;
-  animation:a1 0.5s linear infinite;
-}
-.musicContainer span:nth-child(8){
-  top: 80px;
-  left: 100px;
-  animation:a3 0.5s linear infinite;
-}
-.musicContainer span:nth-child(9){
-  top: 80px;
-  left: 110px;
-  animation:a1 0.5s linear infinite;
-}
-.musicContainer span:nth-child(10){
-  top: 80px;
-  left: 120px;
-}
-.musicContainer span:nth-child(11){
-  top: 80px;
-  left: 130px;
-  animation:a2 0.5s linear infinite;
-}
-.musicContainer span:nth-child(12){
-  top: 80px;
-  left: 140px;
-  animation:a5 0.5s linear infinite;
-}
-.musicContainer span:nth-child(13){
-  top: 80px;
-  left: 150px;
-  animation:a2 0.5s linear infinite;
-}
-.musicContainer span:nth-child(14){
-  top: 80px;
-  left: 160px;
-  animation:a2 0.5s linear infinite;
-}
-.musicContainer span:nth-child(15){
-  top: 80px;
-  left: 170px;
-  animation:a1 0.5s linear infinite;
-}
-.musicContainer span:nth-child(16){
-  top: 80px;
-  left: 180px;
-  animation:a3 0.5s linear infinite;
-}
-.musicContainer span:nth-child(17){
-  top: 80px;
-  left: 190px;
-  animation:a2 0.5s linear infinite;
-}
-.musicContainer span:nth-child(18){
-  top: 80px;
-  left: 200px;
-  animation:a1 0.5s linear infinite;
-}
-.musicContainer span:nth-child(19){
-  top: 80px;
-  left: 210px;
-  animation:a4 0.5s linear infinite;
-}
-
-@keyframes a1{
-  from{transform: scaleY(0);}
-  to{transform: scaleY(1.5);}
-}
-
-@keyframes a2{
-  from{transform: scaleY(0);}
-  to{transform: scaleY(4);}
-}
-
-@keyframes a3{
-  from{transform: scaleY(0);}
-  to{transform: scaleY(10);}
-}
-
-@keyframes a4{
-  from{transform: scaleY(0);}
-  to{transform: scaleY(15);}
-}
-@keyframes a5{
-  from{transform: scaleY(0);}
-  to{transform: scaleY(19);}
 }
 
 .resumeBox{

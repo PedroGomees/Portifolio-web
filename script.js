@@ -48,12 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const projects = [
         {
             id: 1,
-            title: 'Projeto Nexus UI',
-            description: 'Implementação WEB na Nexus',
+            title: 'EM BREVE...',
+            description: '',
             imageUrl: 'https://via.placeholder.com/600x400/FF0000/FFFFFF?text=Projeto+1', // Substitua pelos caminhos das suas imagens
             link: 'https://exemplo.com/projeto1',
         },
-        {
+       /* {
             id: 2,
             title: 'Questions and Answers',
             description:"Plataform Questions and Answers API é a API de uma plataforma de perguntas e respostas desenvolvida para permitir que usuários publiquem perguntas, respondam dúvidas e interajam em uma comunidade de aprendizado",
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: 'Uma descrição detalhada deste projeto sensacional.',
             imageUrl: 'https://via.placeholder.com/600x400/FFFF00/000000?text=Projeto+4',
             link: 'https://exemplo.com/projeto4',
-        },
+        },*/
         // Adicione mais projetos aqui
     ];
 
