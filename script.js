@@ -9,7 +9,7 @@ function reveal() {
 
     if (revealtop < windowheight - revealpoint) {
       reveals[i].classList.add('active');
-      ocult.forEach(el => el.classList.add('fade')); // corrigido para funcionar com NodeList
+      ocult.forEach(el => el.classList.add('fade')); 
     } else {
       reveals[i].classList.remove('active');
       ocult.forEach(el => el.classList.remove('fade'));
@@ -17,23 +17,23 @@ function reveal() {
   }
 }
 
-const limiteMaximo = 80; // limite em %
+const limiteMaximo = 80; 
 
 function updateScrollBar() {
   const scrollBar = document.getElementById('scroll-progress-bar');
   const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
 
-  const fator = 0.06;// quanto menor, mais devagar a barra preenche
+  const fator = 0.08;
   let scrollPercent = (scrollTop / docHeight) * 100 * fator;
 
   scrollBar.style.width = scrollPercent + '%';
 }
 
-// Combinar com seu scroll listener
+
 window.addEventListener('scroll', () => {
-  reveal(); // sua função existente
-  updateScrollBar(); // nova função da barra horizontal
+  reveal(); 
+  updateScrollBar(); 
 });
 
 /*carrossel*/
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 1,
             title: 'EM BREVE...',
             description: '',
-            imageUrl: 'https://via.placeholder.com/600x400/FF0000/FFFFFF?text=Projeto+1', // Substitua pelos caminhos das suas imagens
+          imageUrl: 'https://via.placeholder.com/600x400/FF0000/FFFFFF?text=Projeto+1',
             link: 'https://exemplo.com/projeto1',
         },
        /* {
@@ -74,14 +74,14 @@ document.addEventListener('DOMContentLoaded', () => {
             imageUrl: 'https://via.placeholder.com/600x400/FFFF00/000000?text=Projeto+4',
             link: 'https://exemplo.com/projeto4',
         },*/
-        // Adicione mais projetos aqui
+       
     ];
 
     let currentIndex = 0;
 
     // Função para renderizar os slides
     function renderSlides() {
-        carousel.innerHTML = ''; // Limpa o carrossel antes de adicionar novos slides
+        carousel.innerHTML = ''; 
         projects.forEach(project => {
             const slide = document.createElement('div');
             slide.classList.add('carousel-slide');
@@ -91,12 +91,12 @@ document.addEventListener('DOMContentLoaded', () => {
             link.target = '_blank';
             link.rel = 'noopener noreferrer';
 
-            const img = document.createElement('img');
+           /* const img = document.createElement('img');
             img.src = project.imageUrl;
             img.alt = project.title;
-            // img.loading = 'lazy'; // Para carregamento lazy da imagem (opcional)
+            // img.loading = 'lazy'; 
 
-            link.appendChild(img);
+            link.appendChild(img);*/
 
             const title = document.createElement('h3');
             title.textContent = project.title;
@@ -110,19 +110,19 @@ document.addEventListener('DOMContentLoaded', () => {
             carousel.appendChild(slide);
         });
 
-        updateCarouselPosition(); // Posiciona o carrossel no slide correto
-        updateButtonVisibility(); // Atualiza a visibilidade dos botões
+        updateCarouselPosition(); 
+        updateButtonVisibility(); 
     }
 
     // Função para atualizar a posição do carrossel
     function updateCarouselPosition() {
-        const offset = -currentIndex * 100; // Move 100% para cada slide
+        const offset = -currentIndex * 100; 
         carousel.style.transform = `translateX(${offset}%)`;
     }
 
     // Função para atualizar a visibilidade dos botões de navegação
     function updateButtonVisibility() {
-        if (projects.length <= 1) { // Se houver 0 ou 1 projeto, esconde os botões
+        if (projects.length <= 1) {
             prevButton.classList.add('hidden');
             nextButton.classList.add('hidden');
         } else {
@@ -130,11 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nextButton.classList.remove('hidden');
         }
 
-        // Se você quiser que os botões desapareçam nos extremos (sem loop)
-        // prevButton.disabled = currentIndex === 0;
-        // nextButton.disabled = currentIndex === projects.length - 1;
-        // prevButton.classList.toggle('hidden', currentIndex === 0);
-        // nextButton.classList.toggle('hidden', currentIndex === projects.length - 1);
+   
     }
 
     // Event Listeners para os botões
@@ -150,4 +146,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Renderiza os slides quando a página é carregada
     renderSlides();
+});
+document.querySelector('.scroll-down').addEventListener('click', function(e) {
+  e.preventDefault();
+
+  const target = document.querySelector('#contatos');
+  const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+  const startPosition = window.pageYOffset;
+  const distance = targetPosition - startPosition;
+  const duration = 800; 
+  let start = null;
+
+  function easeInOutCubic(t) {
+    return t < 0.5
+      ? 4 * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  function animationScroll(timestamp) {
+    if (!start) start = timestamp;
+    const elapsed = timestamp - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = easeInOutCubic(progress);
+
+    window.scrollTo(0, startPosition + distance * ease);
+
+    if (elapsed < duration) requestAnimationFrame(animationScroll);
+  }
+
+  requestAnimationFrame(animationScroll);
+});
+
+function smoothScrollTo(targetID, duration = 900) {
+  const element = document.querySelector(targetID);
+  if (!element) return;
+
+  const startY = window.pageYOffset;
+  const targetY = element.getBoundingClientRect().top + startY;
+  const distance = targetY - startY;
+  let startTime = null;
+
+  function easeInOutCubic(t) {
+    return t < 0.5
+      ? 4 * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const easedProgress = easeInOutCubic(progress);
+
+    window.scrollTo(0, startY + distance * easedProgress);
+
+    if (elapsed < duration) requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}
+
+// Aplica para todos os links do nav
+document.querySelectorAll('#navlinks a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    smoothScrollTo(this.getAttribute('href'), 900);
+  });
 });
